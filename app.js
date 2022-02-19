@@ -1,16 +1,12 @@
 import express from "express";
 
-let app = express();
-
-app.listen("3000", () => {
-  console.log("Server runnning");
+var app = express();
+//Respond with "hello world" for requests that hit our root "/"
+app.get("/", function (req, res) {
+  res.send("hello world");
 });
 
-app.get("/", (req, res) => {
-  res.status(200);
-  res.set("Content-Type", "text/plain");
-  res.write("Hey there");
-  res.send();
-});
+//listen to port 3000 by default
+app.listen(process.env.PORT || 3000);
 
-console.log("test");
+export default app;
