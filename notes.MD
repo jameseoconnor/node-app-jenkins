@@ -1,0 +1,2 @@
+- Each variable/ object has its own scope within a .js file, if we want to make it available, we need to export it using `module.export`
+-
